@@ -32,7 +32,8 @@
                         available, but the majority have suffered alteration in some form, by injected humou.</p>
                     <div class="mt-5 flex justify-center">
                         <input id="search-field" class="py-2 px-2 w-96" type="text" placeholder="Search any food">
-                        <button id="search-btn" onclick="searchText()" class="bg-yellow-400 px-6 py-2 uppercase">Search</button>
+                        <button id="search-btn" onclick="searchText()"
+                            class="bg-yellow-400 px-6 py-2 uppercase">Search</button>
                     </div>
                 </div>
             </div>
@@ -46,11 +47,28 @@
 
                 </div>
                 <div class="text-center">
-                    <a id="show-all" onclick="showAllDataTogether()" class="btn bg-yellow-400 text-black hover:bg-slate-500 px-7 border-none rounded-sm">Show All</a>
+                    <a id="show-all" onclick="showAllDataTogether()"
+                        class="btn bg-yellow-400 text-black hover:bg-slate-500 px-7 border-none rounded-sm">Show All</a>
+                </div>
+            </div>
+        </section>
+        <section>
+            <!-- The button to open modal -->
+
+
+            <!-- Put this part before </body> tag -->
+            <input type="checkbox" id="my-modal-6" class="modal-toggle" />
+            <div class="modal modal-bottom sm:modal-middle">
+                <div class="modal-box" id="modal-boxs">
+
                 </div>
             </div>
         </section>
     </main>
+
+    <footer>
+        
+    </footer>
 
     <script src="js/meal.js"></script>
 </body>

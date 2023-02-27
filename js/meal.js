@@ -27,27 +27,12 @@ const displayMeal = (meals) => {
                 <h2 class="text-2xl">${meal.strMeal}</h2>
                 <p class="text-sm">There are many variations of passages of available, but the majority
                 have suffered</p>
-                <!-- The button to open modal -->
-                <label for="my-modal-6" class="btn bg-transparent w-32 text-yellow-300 border-none">open modal</label>
-
-                <!-- Put this part before </body> tag -->
-                <input type="checkbox" id="my-modal-6" class="modal-toggle" />
-                <div class="modal modal-bottom sm:modal-middle">
-                    <div class="modal-box">
-                        <h3 class="font-bold text-lg">${meal.strMeal}</h3>
-                        <p class="py-4 text-sm text-justify">${meal.strInstructions}</p>
-                        <div class="modal-action">
-                            <label for="my-modal-6" class="btn">Close</label>
-                        </div>
-                    </div>
-                </div>
+                <label for="my-modal-6" onclick="modal(${meal.idMeal})" class="btn">open modal</label>
             </div>
         </div>
         `
         menuContainer.appendChild(div);
     })
-    
-
 }
 
 const showAllDataTogether = () => {
@@ -76,23 +61,9 @@ const displaymeal = (showAll) => {
                 <h2 class="text-2xl">${meals.strMeal}</h2>
                 <p class="text-sm">There are many variations of passages of available, but the majority
                 have suffered</p>
-                <!-- The button to open modal -->
-                <label for="my-modal-6" class="btn bg-transparent w-32 text-yellow-300 border-none">open modal</label>
-
-                <!-- Put this part before </body> tag -->
-                <input type="checkbox" id="my-modal-6" class="modal-toggle" />
-                <div class="modal modal-bottom sm:modal-middle">
-                    <div class="modal-box">
-                        <h3 class="font-bold text-lg">${meals.strMeal}</h3>
-                        <p class="py-4 text-sm text-justify">${meals.strInstructions}</p>
-                        <div class="modal-action">
-                            <label for="my-modal-6" class="btn">Close</label>
-                        </div>
-                    </div>
-                </div>
+                <label for="my-modal-6" onclick="modal(${meals.idMeal})" class="btn">open modal</label>
             </div>
-        </div>
-        `
+        </div>`
         menuContainer.appendChild(div);
         
     })
@@ -104,11 +75,16 @@ const modal = (id) => {
     .then (data => dispalyModal(data))
 }
 
-
 const dispalyModal = (modal) => {
-    console.log(modal);
+    const modalBox = document.getElementById('modal-boxs');
+    modalBox.textContent = "";
+    modalBox.innerHTML = `
+        <h2 class="text-3xl font-bold mb-4">${modal.meals[0].strMeal}</h2>
+        <img src="${modal.meals[0].strMealThumb}">
+        <div class="modal-action">
+            <label for="my-modal-6" class="btn">Close</label>
+        </div>`;
 }
-
 
 const searchText = () => {
     const searchField = document.getElementById('search-field').value;
